@@ -24,7 +24,7 @@ class User{
     var targetScores: Int = 15
     
     var dayScores : [Date : [(foodId: Int,  score: Int)]] = [
-        Date().stripTime() : [(1, 3), (5, 1)],
+        //Date().stripTime() : [(1, 3), (5, 1)],
         Calendar.current.date(byAdding: .day, value: -1, to: Date().stripTime())! : [(1, 2), (2, 3)],
         Calendar.current.date(byAdding: .day, value: -2, to: Date().stripTime())! : [(1, 3), (4, 1), (3, 1)]
     ]

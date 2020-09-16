@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,36 +12,69 @@
             <objects>
                 <viewController restorationIdentifier="tracking" storyboardIdentifier="tracking" title="Tracking" id="QkU-bM-neS" customClass="TrackingViewController" customModule="FoodTracking" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="aLZ-yb-SGr">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="50" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="MeY-at-TVB">
-                                <rect key="frame" x="0.0" y="82" width="375" height="647"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="34" translatesAutoresizingMaskIntoConstraints="NO" id="hLL-vf-kAn">
+                                <rect key="frame" x="117" y="8" width="141" height="22"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QFi-cQ-uWD">
+                                        <rect key="frame" x="0.0" y="0.0" width="15.5" height="22"/>
+                                        <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <state key="normal" image="lessthan" catalog="system"/>
+                                        <connections>
+                                            <action selector="prevDateButtonTouch" destination="QkU-bM-neS" eventType="touchUpInside" id="mwZ-fP-FTC"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nt7-bd-CYv">
+                                        <rect key="frame" x="49.5" y="0.0" width="42" height="22"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iKm-JA-Kjm">
+                                        <rect key="frame" x="125.5" y="0.0" width="15.5" height="22"/>
+                                        <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <state key="normal" image="greaterthan" catalog="system"/>
+                                        <connections>
+                                            <action selector="nextDateButtonTouch" destination="QkU-bM-neS" eventType="touchUpInside" id="fHW-Zr-vN1"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OVp-Ph-oQY">
+                                <rect key="frame" x="330" y="1" width="37" height="36"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="40" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="MeY-at-TVB">
+                                <rect key="frame" x="0.0" y="38" width="375" height="580"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="food" id="bcg-xz-LAM" customClass="FoodTableViewCell" customModule="FoodTracking" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="55.333332061767578" width="375" height="50"/>
+                                        <rect key="frame" x="0.0" y="55.5" width="375" height="40"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bcg-xz-LAM" id="5v3-f6-IAg">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dbn-uY-H02">
-                                                    <rect key="frame" x="16" y="5" width="137.66666666666666" height="40"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Напитки высокого качества" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dbn-uY-H02">
+                                                    <rect key="frame" x="10" y="5" width="119" height="30"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" secondItem="Dbn-uY-H02" secondAttribute="height" multiplier="141:41" id="UHN-IE-f9Q"/>
+                                                        <constraint firstAttribute="width" secondItem="Dbn-uY-H02" secondAttribute="height" multiplier="111:41" constant="38" id="UHN-IE-f9Q"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="Xuw-au-P3k">
-                                                    <rect key="frame" x="174" y="0.0" width="185" height="50"/>
+                                                <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="Xuw-au-P3k">
+                                                    <rect key="frame" x="130" y="0.0" width="245" height="40"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H1g-hn-e20">
-                                                            <rect key="frame" x="0.0" y="0.0" width="30" height="50"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="30" id="UgO-A4-yIo"/>
+                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="0qT-rw-d36"/>
                                                             </constraints>
                                                             <state key="normal" title="+2">
                                                                 <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -51,7 +84,10 @@
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qdI-hq-wJL">
-                                                            <rect key="frame" x="31" y="0.0" width="30" height="50"/>
+                                                            <rect key="frame" x="41" y="0.0" width="40" height="40"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="97C-AE-XGB"/>
+                                                            </constraints>
                                                             <state key="normal" title="+2">
                                                                 <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                             </state>
@@ -60,7 +96,10 @@
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tWl-Tm-tfZ">
-                                                            <rect key="frame" x="62" y="0.0" width="30" height="50"/>
+                                                            <rect key="frame" x="82" y="0.0" width="40" height="40"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="z5w-Y6-bK1"/>
+                                                            </constraints>
                                                             <state key="normal" title="+2">
                                                                 <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                             </state>
@@ -69,7 +108,10 @@
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z4c-H4-2hi">
-                                                            <rect key="frame" x="93" y="0.0" width="30" height="50"/>
+                                                            <rect key="frame" x="123" y="0.0" width="40" height="40"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="C28-DR-xU9"/>
+                                                            </constraints>
                                                             <state key="normal" title="+2">
                                                                 <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                             </state>
@@ -78,7 +120,10 @@
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="heW-5R-j1a">
-                                                            <rect key="frame" x="124" y="0.0" width="30" height="50"/>
+                                                            <rect key="frame" x="164" y="0.0" width="40" height="40"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="G9k-dR-qEB"/>
+                                                            </constraints>
                                                             <state key="normal" title="+2">
                                                                 <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                             </state>
@@ -87,7 +132,10 @@
                                                             </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fcf-Kf-E53">
-                                                            <rect key="frame" x="155" y="0.0" width="30" height="50"/>
+                                                            <rect key="frame" x="205" y="0.0" width="40" height="40"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="0Vd-aW-mRG"/>
+                                                            </constraints>
                                                             <state key="normal" title="+2">
                                                                 <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                                             </state>
@@ -104,10 +152,10 @@
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="Xuw-au-P3k" secondAttribute="bottom" id="3Ty-n9-8ID"/>
                                                 <constraint firstAttribute="bottom" secondItem="Dbn-uY-H02" secondAttribute="bottom" constant="5" id="QGc-TW-OEa"/>
-                                                <constraint firstAttribute="trailing" secondItem="Xuw-au-P3k" secondAttribute="trailing" constant="16" id="Qw8-Cd-CeF"/>
+                                                <constraint firstAttribute="trailing" secondItem="Xuw-au-P3k" secondAttribute="trailing" id="Qw8-Cd-CeF"/>
                                                 <constraint firstItem="Dbn-uY-H02" firstAttribute="top" secondItem="5v3-f6-IAg" secondAttribute="top" constant="5" id="R0M-c5-Ajs"/>
-                                                <constraint firstItem="Xuw-au-P3k" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Dbn-uY-H02" secondAttribute="trailing" constant="6" id="d5A-YQ-Ukd"/>
-                                                <constraint firstItem="Dbn-uY-H02" firstAttribute="leading" secondItem="5v3-f6-IAg" secondAttribute="leading" constant="16" id="hAf-dF-c1J"/>
+                                                <constraint firstItem="Xuw-au-P3k" firstAttribute="leading" relation="lessThanOrEqual" secondItem="Dbn-uY-H02" secondAttribute="trailing" constant="12" id="d5A-YQ-Ukd"/>
+                                                <constraint firstItem="Dbn-uY-H02" firstAttribute="leading" secondItem="5v3-f6-IAg" secondAttribute="leading" constant="10" id="hAf-dF-c1J"/>
                                                 <constraint firstItem="Xuw-au-P3k" firstAttribute="top" secondItem="5v3-f6-IAg" secondAttribute="top" id="ls7-S2-g8c"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -128,39 +176,6 @@
                                     <outlet property="delegate" destination="QkU-bM-neS" id="5KX-jd-4ev"/>
                                 </connections>
                             </tableView>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="34" translatesAutoresizingMaskIntoConstraints="NO" id="hLL-vf-kAn">
-                                <rect key="frame" x="117" y="52" width="141" height="22"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QFi-cQ-uWD">
-                                        <rect key="frame" x="0.0" y="0.0" width="15.666666666666666" height="22"/>
-                                        <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <state key="normal" image="lessthan" catalog="system"/>
-                                        <connections>
-                                            <action selector="prevDateButtonTouch" destination="QkU-bM-neS" eventType="touchUpInside" id="mwZ-fP-FTC"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nt7-bd-CYv">
-                                        <rect key="frame" x="49.666666666666657" y="0.0" width="41.666666666666657" height="22"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iKm-JA-Kjm">
-                                        <rect key="frame" x="125.33333333333336" y="0.0" width="15.666666666666671" height="22"/>
-                                        <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <state key="normal" image="greaterthan" catalog="system"/>
-                                        <connections>
-                                            <action selector="nextDateButtonTouch" destination="QkU-bM-neS" eventType="touchUpInside" id="fHW-Zr-vN1"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OVp-Ph-oQY">
-                                <rect key="frame" x="330" y="45" width="37" height="36"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="30"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -198,11 +213,11 @@
             <objects>
                 <viewController title="Category Guide" id="gnr-Gh-E5D" customClass="FoodDetailViewController" customModule="FoodTracking" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Gpp-Pu-EqU">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X4z-r5-jbS">
-                                <rect key="frame" x="16" y="60" width="343" height="653"/>
+                                <rect key="frame" x="16" y="60" width="382" height="737"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Label">
                                         <attributes>
