@@ -32,6 +32,11 @@ extension GraphsViewController {
     private func changeView(day score: Int) {
         
         switch score {
+        case 0:
+            getCaseDescription(color: #colorLiteral(red: 0.9764705896, green: 0.9467297923, blue: 0, alpha: 1),
+                               user: score,
+                               background: #colorLiteral(red: 0.6803390694, green: 0.8305631209, blue: 0.9764705896, alpha: 1),
+                               description: "Ноль лучше минуса ❤️")
         case 0..<Int(Double(Food.maxScores()) * 0.38):
             getCaseDescription(color: #colorLiteral(red: 0.9764705896, green: 0.9467297923, blue: 0, alpha: 1),
                                user: score,
@@ -75,7 +80,7 @@ extension GraphsViewController {
         descriptionLabel.text = text
         scoreMoreLabel.text = String(value)
         
-        if value > 0 {
+        if value >= 0 {
             circularProgress.setProgressWithAnimation(duration: 1.5,
                                                       value: (Float(1.0)/Float(Food.maxScores()))*Float(value))
             valueLabel.text = "Ещё можно набрать \(Food.maxScores() - user.getTotalPositiveScore(date: date)) баллов"
